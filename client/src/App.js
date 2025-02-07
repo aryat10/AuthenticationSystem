@@ -1,18 +1,19 @@
-
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Register from "./pages/registerPage";
+import "./App.css";
+import FrontPage from "./FrontPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       <h1>Less goo !! </h1>
-      </header>
-      <footer>
-        <p>
-          made with ❤️ <br></br> Aryat
-        </p>
-      </footer>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<FrontPage />} />
+        </Routes>
+      </Router>
+     
+    </>
   );
 }
 
