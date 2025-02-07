@@ -102,7 +102,7 @@ export default function RegisterPage() {
             </p>
             <form onSubmit={register}>
               <label style={labelStyle} htmlFor="registerUserName">
-                UserName
+                Username
               </label>
               <input
                 type="text"
