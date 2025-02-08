@@ -9,7 +9,7 @@ const port = 4000;
 
 app.use(
   cors({
-    origin: "https://your-frontend.vercel.app", // Allow frontend domain
+    origin: "https://authentication-system-k699.vercel.app/", // Allow frontend domain
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
     credentials: true, // Allow cookies, auth headers
   })
