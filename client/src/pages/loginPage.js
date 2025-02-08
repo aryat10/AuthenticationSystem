@@ -14,7 +14,7 @@ export default function LoginPage() {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:4000/login", {
+      const response = await fetch("https://server-keita2lh8-aryat10s-projects.vercel.app/login", {
         method: "POST",
         body: JSON.stringify({ username, password }),
         headers: { "Content-Type": "application/json" },
@@ -47,12 +47,8 @@ export default function LoginPage() {
         textAlign: "center",
       }}
     >
-      <h2 style={{ color: "#333", marginBottom: "10px" }}>
-        Welcome back to System
-      </h2>
-      <p style={{ color: "#6c757d", marginBottom: "20px" }}>
-        Let's get you logged in.
-      </p>
+      <h2 style={{ color: "#333", marginBottom: "10px" }}>Welcome back to System</h2>
+      <p style={{ color: "#6c757d", marginBottom: "20px" }}>Let's get you logged in.</p>
 
       {message && <p style={{ color: "green", fontWeight: "bold" }}>{message}</p>}
       {error && <p style={{ color: "red", fontWeight: "bold" }}>{error}</p>}

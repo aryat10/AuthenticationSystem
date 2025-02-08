@@ -9,16 +9,19 @@ export default function RegisterPage() {
   async function register(ev) {
     ev.preventDefault();
 
-    const response = await fetch("http://localhost:4000/register", {
-      method: "POST",
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://server-keita2lh8-aryat10s-projects.vercel.app/register",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     if (response.ok) {
       setRegistrationSuccess(true);
@@ -98,7 +101,7 @@ export default function RegisterPage() {
           <>
             <h2>Welcome to Authentication System</h2>
             <p style={{ color: "#6c757d", marginBottom: "20px" }}>
-               full fledged system for authentication
+              Full-fledged system for authentication
             </p>
             <form onSubmit={register}>
               <label style={labelStyle} htmlFor="registerUserName">
