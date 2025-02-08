@@ -7,7 +7,13 @@ const app = express();
 const User = require("./models/user");
 const port = 4000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://your-frontend.vercel.app", // Allow frontend domain
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
+    credentials: true, // Allow cookies, auth headers
+  })
+);
 app.use(express.json());
 
 const JWT_SECRET = "your_secret_key_here";
