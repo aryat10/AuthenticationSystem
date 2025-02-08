@@ -1,6 +1,6 @@
 # Authentication System
 
-A simple authentication system using **React.js** with **React Router** for navigation.
+A simple authentication system using **React.js** with **React Router** for navigation and Node.js and Express.js for the server side rendering 
 
 
 ## Installation
