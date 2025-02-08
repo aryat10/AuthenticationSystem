@@ -24,7 +24,7 @@ app.listen(port, () => {
 
 mongoose
   .connect(
-    "mongodb+srv://aryatsrishadow007:Auth54321@cluster0.wh2rq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://aryatsrishadow007:Auth54321@cluster0.wh2rq.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => console.log("Connected to MongoDB🍀"))
   .catch((err) => console.error("Failed to connect to MongoDB:❌", err));
