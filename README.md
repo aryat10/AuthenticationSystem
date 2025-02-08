@@ -2,10 +2,6 @@
 
 A simple authentication system using **React.js** with **React Router** for navigation.
 
-## Features
-- Home page with Login and Register buttons.
-- Register page accessible via `/register`.
-- Navigation using React Router.
 
 ## Installation
 ```sh
