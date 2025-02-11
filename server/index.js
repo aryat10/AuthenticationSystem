@@ -7,16 +7,7 @@ const app = express();
 const User = require("./models/user");
 const port = 4000;
 
-app.use(
-  cors({
-    origin: [
-      "https://authentication-system-k699.vercel.app",
-      "http://localhost:3000",
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors({ origin: "*", methods: ["GET", "POST"] }));
 
 app.use(express.json());
 
