@@ -9,7 +9,10 @@ const port = 4000;
 
 app.use(
   cors({
-    origin: ["https://authentication-system-k699.vercel.app", "http://localhost:3000"],
+    origin: [
+      "https://authentication-system-k699.vercel.app",
+      "http://localhost:3000",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -50,12 +53,14 @@ app.get("/", (req, res) => {
   res.send("Backend working fine");
 });
 
-// Register user here 
+// Register user here
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
-    return res.status(400).json({ error: "Username and password are required" });
+    return res
+      .status(400)
+      .json({ error: "Username and password are required" });
   }
 
   try {
@@ -72,12 +77,14 @@ app.post("/register", async (req, res) => {
   }
 });
 
-// Login user here 
+// Login user here
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
-    return res.status(400).json({ error: "Username and password are required" });
+    return res
+      .status(400)
+      .json({ error: "Username and password are required" });
   }
 
   try {
@@ -98,7 +105,7 @@ app.post("/login", async (req, res) => {
       { id: userDoc._id, username: userDoc.username },
       JWT_SECRET,
       {
-        expiresIn: "1h", 
+        expiresIn: "1h",
       }
     );
 
@@ -109,7 +116,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// Get user details here 
+// Get user details here
 app.get("/user", verifyToken, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
@@ -122,4 +129,3 @@ app.get("/user", verifyToken, async (req, res) => {
     return res.status(500).json({ error: "Failed to fetch user details" });
   }
 });
-
