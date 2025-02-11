@@ -9,11 +9,12 @@ const port = 4000;
 
 app.use(
   cors({
-    origin: "https://authentication-system-k699.vercel.app/", // Allow frontend domain
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
-    credentials: true, // Allow cookies, auth headers
+    origin: ["https://authentication-system-k699.vercel.app", "http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
   })
 );
+
 app.use(express.json());
 
 const JWT_SECRET = "your_secret_key_here";
